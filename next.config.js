@@ -1,6 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+import withLess from 'next-with-less';
+import { resolve } from 'path';
 
-module.exports = nextConfig
+const pathToLessFileWithVariables = resolve('styles/variables.less');
+
+export default withLess({
+  lessLoaderOptions: {
+    additionalData: (content) =>
+      `${content}\n\n@import '${pathToLessFileWithVariables}';`,
+  },
+});
