@@ -16,15 +16,16 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <div className={styles.hero}>
-        <Image src='/garden.jpg' layout='fill' objectFit='cover' />
+        <Image
+          src='/garden.jpg'
+          layout='fill'
+          objectFit='cover'
+          objectPosition='right'
+        />
         <Row justify='center' align='middle'>
           <Col xs={22} md={20} lg={18} xl={16}>
-            <Title>Welcome to CompanyName</Title>
-            <Text>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit
-              aliquam itaque molestias ducimus labore est sit excepturi
-              quibusdam, repudiandae molestiae?
-            </Text>
+            <Title>John Doe</Title>
+            <Text>Gardening &amp; mowing</Text>
           </Col>
         </Row>
       </div>
