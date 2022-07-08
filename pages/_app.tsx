@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app';
 import Navbar from '../components/Navbar/Navbar';
 import '../styles/antd.less';
 import '../styles/globals.less';
+import styles from '../styles/layout.module.less';
 
 const { Footer, Content } = Layout;
 
@@ -11,10 +12,10 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Layout>
       <Navbar />
-      <Content>
+      <Content className={styles.content}>
         <Component {...pageProps} />
       </Content>
-      <Footer>Footer</Footer>
+      <Footer className={styles.footer}>Footer</Footer>
     </Layout>
   );
 };

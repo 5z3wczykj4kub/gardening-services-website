@@ -1,4 +1,4 @@
-import { Typography } from 'antd';
+import { Col, Row, Typography } from 'antd';
 import 'antd/dist/antd.css';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -17,14 +17,16 @@ const Home: NextPage = () => {
       </Head>
       <div className={styles.hero}>
         <Image src='/garden.jpg' layout='fill' objectFit='cover' />
-        <div>
-          <Title>Welcome to CompanyName</Title>
-          <Text>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit
-            aliquam itaque molestias ducimus labore est sit excepturi quibusdam,
-            repudiandae molestiae?
-          </Text>
-        </div>
+        <Row justify='center' align='middle'>
+          <Col xs={22} md={20} lg={18} xl={16}>
+            <Title>Welcome to CompanyName</Title>
+            <Text>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit
+              aliquam itaque molestias ducimus labore est sit excepturi
+              quibusdam, repudiandae molestiae?
+            </Text>
+          </Col>
+        </Row>
       </div>
     </>
   );

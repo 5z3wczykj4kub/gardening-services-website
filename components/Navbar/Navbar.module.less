@@ -1,16 +1,19 @@
 @import '~antd/lib/style/themes/default.less';
+@import '../../styles/variables.less';
 
 .header {
   padding: 0 !important;
   background-color: @white !important;
+  border-bottom: 1px solid @gray-4;
 }
 
 .logo {
   float: left;
   width: auto;
-  margin-inline: 1.25rem;
+  height: 100%;
 }
 
 .menu {
   justify-content: flex-end;
+  border-bottom: 0 !important;
 }
