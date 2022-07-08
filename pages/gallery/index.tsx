@@ -11,7 +11,6 @@ const Gallery: NextPage = () => {
       <Head>
         <title>Website - gallery</title>
       </Head>
-
       <Title className={styles.title} level={4}>
         Gallery
       </Title>
