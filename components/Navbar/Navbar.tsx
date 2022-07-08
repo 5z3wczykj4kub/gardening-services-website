@@ -1,13 +1,15 @@
 import { Col, Layout, Menu, Row } from 'antd';
 import { useRouter } from 'next/router';
 import { MenuClickEventHandler } from 'rc-menu/lib/interface';
-import items, { defaultSelectedKeys } from './items';
+import items from './items';
 import styles from './Navbar.module.less';
 
 const { Header } = Layout;
 
 const Navbar = () => {
   const router = useRouter();
+
+  const defaultSelectedKeys = [router.pathname.replace('/', '') || 'homepage'];
 
   const handleMenuItemClick: MenuClickEventHandler = ({ key }) =>
     router.push(`/${key === 'homepage' ? '' : key}`);

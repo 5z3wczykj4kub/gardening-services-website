@@ -7,8 +7,6 @@ import {
 } from '@ant-design/icons';
 import { ItemType } from 'antd/lib/menu/hooks/useItems';
 
-const defaultSelectedKeys = ['homepage'];
-
 const items: ItemType[] = [
   {
     key: 'homepage',
@@ -36,7 +34,5 @@ const items: ItemType[] = [
     label: 'Contact',
   },
 ];
-
-export { defaultSelectedKeys };
 
 export default items;
