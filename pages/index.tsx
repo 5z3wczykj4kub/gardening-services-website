@@ -1,13 +1,18 @@
-import { Col, Row, Typography } from 'antd';
+import { PhoneOutlined } from '@ant-design/icons';
+import { Button, Col, Grid, Row, Typography } from 'antd';
 import 'antd/dist/antd.css';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from './index.module.less';
 
-const { Title, Text } = Typography;
+const { Title, Paragraph, Text } = Typography;
+
+const { useBreakpoint } = Grid;
 
 const Home: NextPage = () => {
+  const breakpoint = useBreakpoint();
+
   return (
     <>
       <Head>
@@ -25,7 +30,16 @@ const Home: NextPage = () => {
         <Row justify='center' align='middle'>
           <Col xs={22} md={20} lg={18} xl={16}>
             <Title>John Doe</Title>
-            <Text>Gardening &amp; mowing</Text>
+            <Text>Lawn &amp; order</Text>
+            <Paragraph>
+              <Button
+                type='primary'
+                size={breakpoint.xs ? 'middle' : 'large'}
+                icon={<PhoneOutlined />}
+              >
+                Call 123-456-7890 now!
+              </Button>
+            </Paragraph>
           </Col>
         </Row>
       </div>

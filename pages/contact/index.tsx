@@ -40,7 +40,7 @@ const Contact: NextPage = () => {
             </>
           }
         >
-          984 153 421
+          123-456-7890
         </Descriptions.Item>
         <Descriptions.Item
           label={

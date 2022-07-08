@@ -21,35 +21,37 @@ const Gallery: NextPage = () => {
         distinctio neque. Minima cum expedita mollitia, quam laborum voluptate
         placeat.
       </Paragraph>
-      <Row className={styles.gallery} gutter={[14, 14]}>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Image src='/gallery-0.jpg' />
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Image src='/gallery-1.jpg' />
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Image src='/gallery-2.jpg' />
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Image src='/gallery-3.jpg' />
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Image src='/gallery-4.jpg' />
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Image src='/gallery-5.jpg' />
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Image src='/gallery-6.jpg' />
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Image src='/gallery-7.jpg' />
-        </Col>
-        <Col xs={24} sm={12} md={8} lg={6}>
-          <Image src='/gallery-8.jpg' />
-        </Col>
-      </Row>
+      <Image.PreviewGroup>
+        <Row className={styles.gallery} gutter={[14, 14]}>
+          <Col xs={24} sm={12} md={8} lg={6}>
+            <Image src='/gallery-0.jpg' />
+          </Col>
+          <Col xs={24} sm={12} md={8} lg={6}>
+            <Image src='/gallery-1.jpg' />
+          </Col>
+          <Col xs={24} sm={12} md={8} lg={6}>
+            <Image src='/gallery-2.jpg' />
+          </Col>
+          <Col xs={24} sm={12} md={8} lg={6}>
+            <Image src='/gallery-3.jpg' />
+          </Col>
+          <Col xs={24} sm={12} md={8} lg={6}>
+            <Image src='/gallery-4.jpg' />
+          </Col>
+          <Col xs={24} sm={12} md={8} lg={6}>
+            <Image src='/gallery-5.jpg' />
+          </Col>
+          <Col xs={24} sm={12} md={8} lg={6}>
+            <Image src='/gallery-6.jpg' />
+          </Col>
+          <Col xs={24} sm={12} md={8} lg={6}>
+            <Image src='/gallery-7.jpg' />
+          </Col>
+          <Col xs={24} sm={12} md={8} lg={6}>
+            <Image src='/gallery-8.jpg' />
+          </Col>
+        </Row>
+      </Image.PreviewGroup>
     </>
   );
 };

@@ -22,14 +22,19 @@
       text-align: right;
       color: @white;
 
-      h1 {
+      & > h1 {
+        margin-bottom: 0;
         font-size: clamp(2rem, 7.5vw, 4rem);
         color: inherit;
       }
 
-      span {
+      & > span {
         color: inherit;
         font-size: clamp(1rem, 3vw, 1.75rem);
+      }
+
+      & > div {
+        margin-top: 1rem;
       }
     }
   }
