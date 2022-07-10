@@ -5,22 +5,29 @@
   width: 100%;
   height: calc(100vh - 4rem);
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    opacity: 0.5;
-    background: linear-gradient(@black 50%, @primary-color);
-  }
-
   & > div {
     height: 100%;
 
-    & > div {
+    .card {
+      position: relative;
       z-index: 1;
-      text-align: right;
+      display: inline-flex;
+      flex-direction: column;
+      padding: 1rem;
       color: @white;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.125rem;
+        background-color: @black;
+        opacity: 0.5;
+      }
 
       & > h1 {
         margin-bottom: 0;
@@ -30,7 +37,7 @@
 
       & > span {
         color: inherit;
-        font-size: clamp(1rem, 3vw, 1.75rem);
+        font-size: clamp(1rem, 2.8125vw, 1.75rem);
       }
 
       & > div {

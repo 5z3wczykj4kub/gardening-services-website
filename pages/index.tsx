@@ -25,21 +25,23 @@ const Home: NextPage = () => {
           src='/garden.jpg'
           layout='fill'
           objectFit='cover'
-          objectPosition='right'
+          objectPosition='left'
         />
         <Row justify='center' align='middle'>
           <Col xs={22} md={20} lg={18} xl={16}>
-            <Title>John Doe</Title>
-            <Text>Lawn &amp; order</Text>
-            <Paragraph>
-              <Button
-                type='primary'
-                size={breakpoint.xs ? 'middle' : 'large'}
-                icon={<PhoneOutlined />}
-              >
-                Call 123-456-7890 now!
-              </Button>
-            </Paragraph>
+            <div className={styles.card}>
+              <Title>Company name</Title>
+              <Text>Lawn &amp; order</Text>
+              <Paragraph>
+                <Button
+                  type='primary'
+                  size={breakpoint.xs ? 'middle' : 'large'}
+                  icon={<PhoneOutlined />}
+                >
+                  +00 123 456 789
+                </Button>
+              </Paragraph>
+            </div>
           </Col>
         </Row>
       </div>
