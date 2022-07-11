@@ -1,0 +1,64 @@
+@import '~antd/lib/style/themes/default.less';
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 4rem);
+}
+
+.heroContent {
+  position: relative;
+  height: 100%;
+}
+
+.heroCard {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem 1.875rem;
+  text-align: center;
+  color: @white;
+
+  @media (min-width: @screen-xs) {
+    width: auto;
+    text-align: left;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.125rem;
+    background-color: @black;
+    opacity: 0.5;
+  }
+
+  .heroCardTitle {
+    margin-bottom: 0;
+    font-size: clamp(2rem, 7.5vw, 4rem);
+    color: inherit;
+  }
+
+  .heroCardSubtitle {
+    color: inherit;
+    font-size: clamp(1rem, 2.8125vw, 1.75rem);
+  }
+
+  .heroCardPhoneNumberButtonWrapper {
+    margin-top: 1rem;
+  }
+}
+
+.link {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+}
