@@ -7,7 +7,13 @@ import { UserOutlined, PhoneOutlined, MailOutlined } from '@ant-design/icons';
 
 const { Title, Paragraph } = Typography;
 
-const Contact: NextPage = () => {
+interface IContactProps {
+  fullName: string;
+  phoneNumber: string;
+  email: string;
+}
+
+const Contact: NextPage<IContactProps> = ({ fullName, phoneNumber, email }) => {
   return (
     <>
       <Head>
@@ -31,7 +37,7 @@ const Contact: NextPage = () => {
             </>
           }
         >
-          John Doe
+          {fullName}
         </Descriptions.Item>
         <Descriptions.Item
           label={
@@ -40,7 +46,7 @@ const Contact: NextPage = () => {
             </>
           }
         >
-          123-456-7890
+          {phoneNumber}
         </Descriptions.Item>
         <Descriptions.Item
           label={
@@ -49,11 +55,26 @@ const Contact: NextPage = () => {
             </>
           }
         >
-          johndoe@example.com
+          {email}
         </Descriptions.Item>
       </Descriptions>
     </>
   );
 };
+
+const getStaticProps = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SANITY_URL!}*[_type == "contact"][0]`
+  );
+  const {
+    result: { fullName, phoneNumber, email },
+  } = await res.json();
+
+  return {
+    props: { fullName, phoneNumber, email },
+  };
+};
+
+export { getStaticProps };
 
 export default Contact;

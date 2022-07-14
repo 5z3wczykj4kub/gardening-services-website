@@ -1,11 +1,17 @@
-import { Col, Image, Row, Typography } from 'antd';
+import { Col, Empty, Image, Row, Typography } from 'antd';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import styles from './index.module.less';
 
 const { Title, Paragraph } = Typography;
 
-const Gallery: NextPage = () => {
+interface IGalleryProps {
+  images: any;
+}
+
+const Gallery: NextPage<IGalleryProps> = ({ images }) => {
+  console.log('images', images);
+
   return (
     <>
       <Head>
@@ -24,36 +30,88 @@ const Gallery: NextPage = () => {
       <Image.PreviewGroup>
         <Row className={styles.gallery} gutter={[14, 14]}>
           <Col xs={24} sm={12} md={8} lg={6}>
-            <Image src='/gallery-0.jpg' />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${
+                images[0].image.asset._ref.split('-')[1]
+              }-840x560.jpg`}
+            />
           </Col>
           <Col xs={24} sm={12} md={8} lg={6}>
-            <Image src='/gallery-1.jpg' />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${
+                images[0].image.asset._ref.split('-')[1]
+              }-840x560.jpg`}
+            />
           </Col>
           <Col xs={24} sm={12} md={8} lg={6}>
-            <Image src='/gallery-2.jpg' />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${
+                images[0].image.asset._ref.split('-')[1]
+              }-840x560.jpg`}
+            />
           </Col>
           <Col xs={24} sm={12} md={8} lg={6}>
-            <Image src='/gallery-3.jpg' />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${
+                images[0].image.asset._ref.split('-')[1]
+              }-840x560.jpg`}
+            />
           </Col>
           <Col xs={24} sm={12} md={8} lg={6}>
-            <Image src='/gallery-4.jpg' />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${
+                images[0].image.asset._ref.split('-')[1]
+              }-840x560.jpg`}
+            />
           </Col>
           <Col xs={24} sm={12} md={8} lg={6}>
-            <Image src='/gallery-5.jpg' />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${
+                images[0].image.asset._ref.split('-')[1]
+              }-840x560.jpg`}
+            />
           </Col>
           <Col xs={24} sm={12} md={8} lg={6}>
-            <Image src='/gallery-6.jpg' />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${
+                images[0].image.asset._ref.split('-')[1]
+              }-840x560.jpg`}
+            />
           </Col>
           <Col xs={24} sm={12} md={8} lg={6}>
-            <Image src='/gallery-7.jpg' />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${
+                images[0].image.asset._ref.split('-')[1]
+              }-840x560.jpg`}
+            />
           </Col>
           <Col xs={24} sm={12} md={8} lg={6}>
-            <Image src='/gallery-8.jpg' />
+            <Image
+              src={`${process.env.NEXT_PUBLIC_SANITY_CDN_URL}${
+                images[0].image.asset._ref.split('-')[1]
+              }-840x560.jpg`}
+            />
           </Col>
+          {/* <Col span={24}>
+            <Empty description='No images' />
+          </Col> */}
         </Row>
       </Image.PreviewGroup>
     </>
   );
 };
+
+const getStaticProps = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SANITY_URL!}*[_type == "gallery"]`
+  );
+  const { result: images } = await res.json();
+
+  return {
+    props: { images },
+  };
+};
+
+export { getStaticProps };
 
 export default Gallery;

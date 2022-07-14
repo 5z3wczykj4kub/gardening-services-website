@@ -6,34 +6,22 @@ import styles from './index.module.less';
 
 const { Title, Paragraph } = Typography;
 
-const dataSource = [
-  {
-    key: '1',
-    service: 'Service 1',
-    description: 'Lorem ipsum dolor sit amet.',
-    price: 99.99,
-  },
-  {
-    key: '2',
-    service: 'Service 2',
-    description: 'Lorem ipsum dolor sit amet.',
-    price: 99.99,
-  },
-  {
-    key: '3',
-    service: 'Service 3',
-    description: 'Lorem ipsum dolor sit amet.',
-    price: 99.99,
-  },
-  {
-    key: '4',
-    service: 'Service 4',
-    description: 'Lorem ipsum dolor sit amet.',
-    price: 99.99,
-  },
-];
+interface IService {
+  service: string;
+  description: string;
+  price: string;
+}
 
-const Services: NextPage = () => {
+interface IServicesProps {
+  services: IService[];
+}
+
+const Services: NextPage<IServicesProps> = ({ services }) => {
+  const dataSource = services.map((service) => ({
+    key: service.service,
+    ...service,
+  }));
+
   return (
     <>
       <Head>
@@ -58,5 +46,26 @@ const Services: NextPage = () => {
     </>
   );
 };
+
+const getStaticProps = async () => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SANITY_URL!}*[_type == "services"]`
+  );
+  const { result } = await res.json();
+
+  const services = result.map((service: IService) => ({
+    service: service.service,
+    description: service.description || null,
+    price: service.price,
+  }));
+
+  return {
+    props: {
+      services,
+    },
+  };
+};
+
+export { getStaticProps };
 
 export default Services;
