@@ -1,7 +1,7 @@
 import { Table, Typography } from 'antd';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import columns from './columns';
+import { columns } from './columns';
 import styles from './index.module.less';
 
 const { Title, Paragraph } = Typography;
