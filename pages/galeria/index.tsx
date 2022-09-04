@@ -12,23 +12,17 @@ interface IGalleryProps {
 const Gallery: NextPage<IGalleryProps> = ({ images }) => (
   <>
     <Head>
-      <title>Website - gallery</title>
+      <title>Marek Szewczyk - usługi ziemno-ogrodnicze - galeria</title>
     </Head>
     <Title className={styles.title} level={4}>
-      Gallery
+      Galeria
     </Title>
-    <Paragraph>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, qui.
-      Tempora, itaque ipsum quae nesciunt in nihil repellat autem iure minima,
-      eaque sunt dolorem dolorum labore similique molestias laudantium sit
-      distinctio neque. Minima cum expedita mollitia, quam laborum voluptate
-      placeat.
-    </Paragraph>
+    <Paragraph>Galeria zdjęć z wybranych realizacji</Paragraph>
     <Image.PreviewGroup>
       <Row className={styles.gallery} gutter={[14, 14]}>
         {images.length === 0 ? (
           <Col span={24}>
-            <Empty description='No images' />
+            <Empty description='Brak zdjęć' />
           </Col>
         ) : (
           images.map(({ imageUrl }: { imageUrl: string }) => (

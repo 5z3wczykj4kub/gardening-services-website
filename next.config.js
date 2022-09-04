@@ -8,4 +8,8 @@ export default withLess({
     additionalData: (content) =>
       `${content}\n\n@import '${pathToLessFileWithVariables}';`,
   },
+  i18n: {
+    locales: ['pl-PL'],
+    defaultLocale: 'pl-PL',
+  },
 });

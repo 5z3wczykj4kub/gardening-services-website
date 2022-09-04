@@ -17,23 +17,19 @@ const Contact: NextPage<IContactProps> = ({ fullName, phoneNumber, email }) => {
   return (
     <>
       <Head>
-        <title>Website - contact</title>
+        <title>Marek Szewczyk - usługi ziemno-ogrodnicze - kontakt</title>
       </Head>
       <Title className={styles.title} level={4}>
-        Contact
+        Kontakt
       </Title>
       <Paragraph>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, qui.
-        Tempora, itaque ipsum quae nesciunt in nihil repellat autem iure minima,
-        eaque sunt dolorem dolorum labore similique molestias laudantium sit
-        distinctio neque. Minima cum expedita mollitia, quam laborum voluptate
-        placeat.
+        Obszar realizacji obejmuje Lublin i okolice. Zapraszam do kontaktu.
       </Paragraph>
       <Descriptions bordered>
         <Descriptions.Item
           label={
             <>
-              <UserOutlined /> Full name
+              <UserOutlined /> Imię i nazwisko
             </>
           }
         >
@@ -42,7 +38,7 @@ const Contact: NextPage<IContactProps> = ({ fullName, phoneNumber, email }) => {
         <Descriptions.Item
           label={
             <>
-              <PhoneOutlined /> Phone
+              <PhoneOutlined /> Telefon
             </>
           }
         >

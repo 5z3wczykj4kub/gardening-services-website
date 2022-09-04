@@ -10,22 +10,22 @@ const items: ItemType[] = [
   {
     key: 'homepage',
     icon: <HomeOutlined />,
-    label: 'Homepage',
+    label: 'Strona główna',
   },
   {
-    key: 'services',
+    key: 'uslugi',
     icon: <ScissorOutlined />,
-    label: 'Services',
+    label: 'Usługi',
   },
   {
-    key: 'gallery',
+    key: 'galeria',
     icon: <CameraOutlined />,
-    label: 'Gallery',
+    label: 'Galeria',
   },
   {
-    key: 'contact',
+    key: 'kontakt',
     icon: <PhoneOutlined />,
-    label: 'Contact',
+    label: 'Kontakt',
   },
 ];
 

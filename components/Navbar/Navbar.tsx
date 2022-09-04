@@ -18,7 +18,9 @@ const Navbar = () => {
     <Header className={styles.header}>
       <Row justify='center'>
         <Col xs={22} md={20} lg={18} xl={16}>
-          <div className={styles.logo}>LOGO</div>
+          <div className={styles.logo}>
+            <img src='/logo.png' alt='logo' />
+          </div>
           <Menu
             className={styles.menu}
             mode='horizontal'

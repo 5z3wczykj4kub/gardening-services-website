@@ -7,17 +7,17 @@ const { Title, Paragraph } = Typography;
 
 const columns = [
   {
-    title: 'Service',
+    title: 'Nazwa usługi',
     dataIndex: 'service',
     key: 'service',
   },
   {
-    title: 'Description',
+    title: 'Opis',
     dataIndex: 'description',
     key: 'description',
   },
   {
-    title: 'Price',
+    title: 'Cena',
     dataIndex: 'price',
     key: 'price',
   },
@@ -42,18 +42,12 @@ const Services: NextPage<IServicesProps> = ({ services }) => {
   return (
     <>
       <Head>
-        <title>Website - services</title>
+        <title>Marek Szewczyk - usługi ziemno-ogrodnicze - usługi</title>
       </Head>
       <Title className={styles.title} level={4}>
-        Services
+        Usługi
       </Title>
-      <Paragraph>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, qui.
-        Tempora, itaque ipsum quae nesciunt in nihil repellat autem iure minima,
-        eaque sunt dolorem dolorum labore similique molestias laudantium sit
-        distinctio neque. Minima cum expedita mollitia, quam laborum voluptate
-        placeat.
-      </Paragraph>
+      <Paragraph>Cennik usług wraz z ich opisem</Paragraph>
       <Table
         className={styles.table}
         columns={columns}

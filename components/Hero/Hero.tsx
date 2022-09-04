@@ -39,7 +39,7 @@ const Hero = ({ title, subtitle, phoneNumber }: IHomeProps) => {
             <Paragraph>
               <Tooltip
                 placement={breakpoint.xs ? 'bottom' : 'right'}
-                title='Copied'
+                title='Skopiowano do schowka'
                 visible={isCopiedToClipboardTooltipVisible}
               >
                 <Button
