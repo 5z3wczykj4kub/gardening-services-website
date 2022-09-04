@@ -1,10 +1,27 @@
 import { Table, Typography } from 'antd';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { columns } from './columns';
 import styles from './index.module.less';
 
 const { Title, Paragraph } = Typography;
+
+const columns = [
+  {
+    title: 'Service',
+    dataIndex: 'service',
+    key: 'service',
+  },
+  {
+    title: 'Description',
+    dataIndex: 'description',
+    key: 'description',
+  },
+  {
+    title: 'Price',
+    dataIndex: 'price',
+    key: 'price',
+  },
+];
 
 interface IService {
   service: string;
